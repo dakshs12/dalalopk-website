@@ -49,19 +49,19 @@ export default function RootLayout({
             </svg>
           </a>
 
-          {/* Call Button - Fixed Icon */}
+          {/* Phone Button */}
           <a
             href="tel:+919425082577"
             className="w-[60px] h-[60px] rounded-full flex items-center justify-center text-white shadow-xl hover:scale-110 transition duration-300"
             style={{
               background: "linear-gradient(135deg, #25d366, #128c7e)",
-              boxShadow: "0 4px 12px rgba(0,0,0,0.3)"
+              boxShadow: "0 4px 12px rgba(0,0,0,0.15)"
             }}
             aria-label="Call Us"
           >
-            {/* FIX: Reduced icon size slightly (26px) and centered it */}
-            <svg viewBox="0 0 24 24" width="26" height="26" fill="white">
-              <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.44-5.15-3.75-6.59-6.59l1.97-1.57c.3-.3.4-.69.24-1.01a17.402 17.402 0 01-.56-3.53.98.98 0 00-1-.98H4.96a.98.98 0 00-.98.98C4.15 14.01 13.06 23 23.01 23c.55 0 .98-.43.98-.98v-3.03c.01-.53-.42-.96-.98-.96z"/>
+            {/* THE FIXED, PERFECTLY ROUNDED PHONE ICON */}
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="white">
+              <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
             </svg>
           </a>
 
