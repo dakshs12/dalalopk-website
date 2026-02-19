@@ -57,7 +57,7 @@ export default function Navbar() {
               </h1>
 
               <span
-                className="text-[#25d366] font-extrabold text-sm tracking-[0.35em] mt-1 uppercase opacity-100 drop-shadow-sm"
+                className="text-[#D4AF37] font-extrabold text-sm tracking-[0.35em] mt-1 uppercase opacity-100 drop-shadow-sm"
                 style={{ fontFamily: "var(--font-poppins)" }}
               >
                 Since 1970
