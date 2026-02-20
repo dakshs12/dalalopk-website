@@ -35,12 +35,6 @@ export default function ProductCard({ title, items, image }: ProductProps) {
         </ul>
       </div>
       
-      {/* 3. Button (Optional Call to Action) */}
-      <div className="p-4 bg-gray-50 border-t border-gray-100">
-        <span className="text-primary text-sm font-bold block text-center uppercase tracking-wide">
-          Available in Bulk
-        </span>
-      </div>
     </div>
   );
 }
