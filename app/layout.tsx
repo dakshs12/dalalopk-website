@@ -3,6 +3,7 @@ import { Inter, Playfair_Display, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
@@ -28,6 +29,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <SpeedInsights />
 
         {/* FLOATING ACTION BUTTONS */}
         <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-4">
