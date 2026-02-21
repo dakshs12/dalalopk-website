@@ -9,13 +9,13 @@ interface ProductProps {
 export default function ProductCard({ title, items, image }: ProductProps) {
   return (
     <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col h-full">
-      
+
       {/* 1. Image Section */}
       <div className="relative h-48 w-full bg-gray-200">
-        <Image 
-          src={image} 
-          alt={title} 
-          fill 
+        <Image
+          src={image}
+          alt={title}
+          fill
           className="object-cover"
         />
       </div>
@@ -23,7 +23,7 @@ export default function ProductCard({ title, items, image }: ProductProps) {
       {/* 2. Content Section */}
       <div className="p-6 flex-grow">
         <h3 className="text-xl font-bold text-primary mb-3">{title}</h3>
-        
+
         {/* List of varieties */}
         <ul className="space-y-2">
           {items.map((item, index) => (
@@ -34,7 +34,7 @@ export default function ProductCard({ title, items, image }: ProductProps) {
           ))}
         </ul>
       </div>
-      
+
     </div>
   );
 }
