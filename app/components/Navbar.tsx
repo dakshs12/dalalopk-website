@@ -4,13 +4,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { usePathname } from "next/navigation"; // 1. Imported the Pathname checker
+import { usePathname } from "next/navigation"; 
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname(); // 2. Activated the checker
+  const pathname = usePathname(); 
 
-  // SAFE LIST: We manually define exactly where each button goes
+  // SAFE LIST
   const navLinks = [
     { name: "HOME", href: "/" },
     { name: "ABOUT US", href: "/about" }, 
@@ -20,44 +20,45 @@ export default function Navbar() {
   return (
     <nav className="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-gray-100 transition-all duration-300">
 
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
-        <div className="flex justify-between items-center h-28">
+      <div className="max-w-[1440px] mx-auto px-4 md:px-6 lg:px-12">
+        <div className="flex justify-between items-center h-24 md:h-28">
 
-          {/* LEFT SIDE: Logo & Brand */}
+          {/* LEFT SIDE: Logo & Brand (SCALED FOR MOBILE) */}
           <Link 
             href="/" 
             onClick={(e) => {
-              // 3. THE MAGIC: If we are already on Home ("/"), stop the normal snap load and smooth scroll instead!
               if (pathname === "/") {
                 e.preventDefault();
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }
             }}
-            className="flex items-center gap-5 cursor-pointer hover:opacity-90 transition-opacity"
+            className="flex items-center gap-3 md:gap-5 cursor-pointer hover:opacity-90 transition-opacity min-w-0"
           >
-            <div className="relative w-[160px] h-[100px] flex-shrink-0 drop-shadow-md">
+            {/* Logo shrinks on phones, stays large on desktop */}
+            <div className="relative w-[90px] md:w-[160px] h-[60px] md:h-[100px] flex-shrink-0 drop-shadow-md">
               <Image
                 src="/logo.png"
                 alt="OK Logo"
                 fill
-                className="object-contain scale-[2.0]"
+                className="object-contain scale-[1.7] md:scale-[2.0]"
                 priority
               />
             </div>
 
-            <div className="flex flex-col justify-center">
+            {/* Text scales down seamlessly */}
+            <div className="flex flex-col justify-center min-w-0">
               <h1
-                className="text-primary font-serif font-extrabold text-2xl lg:text-3xl leading-none tracking-wide"
+                className="text-primary font-serif font-extrabold text-[1.1rem] md:text-2xl lg:text-3xl leading-tight tracking-wide"
                 style={{
                   fontFamily: "var(--font-playfair)",
-                  textShadow: "2px 2px 4px rgba(0,0,0,0.15)"
+                  textShadow: "1px 1px 2px rgba(0,0,0,0.15)"
                 }}
               >
                 DALAL OMPRAKASH <br className="hidden md:block" /> KHANDELWAL
               </h1>
 
               <span
-                className="text-[#D4AF37] font-extrabold text-sm tracking-[0.35em] mt-1 uppercase opacity-100 drop-shadow-sm"
+                className="text-[#D4AF37] font-extrabold text-[0.65rem] md:text-sm tracking-[0.2em] md:tracking-[0.35em] mt-1 uppercase opacity-100 drop-shadow-sm"
                 style={{ fontFamily: "var(--font-poppins)" }}
               >
                 Since 1970
@@ -66,7 +67,7 @@ export default function Navbar() {
           </Link>
 
           {/* RIGHT SIDE: Navigation Links (Desktop) */}
-          <div className="hidden md:flex items-center space-x-10">
+          <div className="hidden md:flex items-center space-x-10 flex-shrink-0">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -75,7 +76,6 @@ export default function Navbar() {
                 style={{ fontFamily: "var(--font-poppins)" }}
               >
                 {link.name}
-                {/* The Green Underline Effect */}
                 <span className="absolute left-0 -bottom-1 w-0 h-[3px] bg-[#25d366] transition-all duration-300 group-hover:w-full rounded-full"></span>
               </Link>
             ))}
@@ -89,10 +89,10 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* MOBILE BUTTON */}
-          <div className="flex items-center md:hidden">
+          {/* MOBILE BUTTON (LOCKED IN PLACE) */}
+          <div className="flex items-center md:hidden flex-shrink-0 pl-2">
             <button onClick={() => setIsOpen(!isOpen)} className="text-primary p-2">
-              {isOpen ? <X size={36} /> : <Menu size={36} />}
+              {isOpen ? <X size={32} /> : <Menu size={32} />}
             </button>
           </div>
         </div>
