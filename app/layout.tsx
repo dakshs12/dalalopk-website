@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next"; // 1. Added Viewport import here
 import { Inter, Playfair_Display, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
@@ -18,16 +18,24 @@ export const metadata: Metadata = {
   description: "Canvassing Agent in Grain, Pulses, & Cattle Food",
 };
 
+// 2. Added this block to lock the mobile zoom
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.variable} ${playfair.variable} ${poppins.variable} font-sans`}>
+    // 3. Added overflow-x-hidden and w-full to html and body tags
+    <html lang="en" className="overflow-x-hidden w-full">
+      <body className={`${inter.variable} ${playfair.variable} ${poppins.variable} font-sans overflow-x-hidden w-full relative`}>
 
-        {/* 2. Google Analytics Scripts */}
+        {/* Google Analytics Scripts */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=G-6CNS9DD111`}
           strategy="afterInteractive"
@@ -76,7 +84,6 @@ export default function RootLayout({
             }}
             aria-label="Call Us"
           >
-            {/* THE FIXED, PERFECTLY ROUNDED PHONE ICON */}
             <svg viewBox="0 0 24 24" width="28" height="28" fill="white">
               <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
             </svg>
