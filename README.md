@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dalal Omprakash Khandelwal Website
+
+A modern, responsive business website for **Dalal Omprakash Khandelwal** — a trusted canvassing agent in **grain, pulses, and cattle feed**, serving markets with legacy, reliability, and relationship-driven service.
+
+## About the Website
+
+This site showcases the brand, legacy, and core business values of Dalal Omprakash Khandelwal.
+
+From the homepage content, the business highlights:
+- A legacy since **1970**
+- Expertise in grain, pulses, and cattle feed canvassing
+- Daily market connectivity and communication
+- Focus on quality checks, fair pricing, and dependable coordination
+
+The website is designed to provide a clear digital presence with quick contact access (including WhatsApp and phone) for partners, clients, and market stakeholders.
+
+## Tech Stack
+
+- **Next.js 16** (App Router)
+- **React 19**
+- **TypeScript**
+- **Tailwind CSS 4**
+
+## Features
+
+- Clean landing experience with a strong business introduction
+- Responsive layout for desktop and mobile
+- Brand-focused typography and visual identity
+- Prominent contact action buttons (WhatsApp / Call)
+- Reusable component-based architecture (`app/components`)
+
+## Project Structure
+
+- `app/layout.tsx` — Global layout, metadata, fonts, navigation/footer integration
+- `app/page.tsx` — Homepage content and business highlights
+- `public/` — Static assets (images/icons)
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies and run locally:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm run start
+```
 
-## Learn More
+## Customization Notes
 
-To learn more about Next.js, take a look at the following resources:
+If you plan to extend this site further, recommended additions include:
+- Dedicated pages for services and product categories
+- Inquiry/contact form with backend handling
+- SEO enhancements (Open Graph, structured data, sitemap)
+- Multi-language support (if targeting broader regional audiences)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This repository is private/internal unless a license is explicitly added.
